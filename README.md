@@ -1,8 +1,8 @@
 # Rimworld-Mod-Boilerplate
-##  A developer-ready modding boilerplate for RimWorld
+##  A developer-ready modding boilerplate for RimWorld.
 
 **What is it?**
-- A very simple and already prepared modding template for [RimWorld](https://store.steampowered.com/app/294100/RimWorld/)
+- A very simple and already prepared modding template for [RimWorld](https://store.steampowered.com/app/294100/RimWorld/).
 
 **Dependencies**
 - None.
