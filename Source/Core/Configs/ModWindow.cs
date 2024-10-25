@@ -1,28 +1,24 @@
 using UnityEngine;
 using Verse;
 
-namespace RWBoilerplate
+public class ModWindow : Mod
 {
-    public class ModWindow : Mod
+    public static ModConfigs modConfigs;
+
+    public ModWindow(ModContentPack content) : base(content) { modConfigs = GetSettings<ModConfigs>(); }
+
+    public override string SettingsCategory() { return Master.modName; }
+
+    public override void DoSettingsWindowContents(Rect inRect)
     {
-        private readonly ModConfigs modConfigs;
+        Listing_Standard listingStandard = new Listing_Standard();
+        listingStandard.Begin(inRect);
 
-        public ModWindow(ModContentPack content) : base(content)
-        {
-            modConfigs = GetSettings<ModConfigs>();
-        }
+        listingStandard.GapLine();
+        listingStandard.Label("Experimental");
+        listingStandard.CheckboxLabeled("Enable verbose logs", ref modConfigs.verboseBool, "Enable verbose logs");
 
-        public override string SettingsCategory() { return Master.modName; }
-
-        public override void DoSettingsWindowContents(Rect inRect)
-        {
-            Listing_Standard listingStandard = new Listing_Standard();
-
-            listingStandard.Begin(inRect);
-            listingStandard.CheckboxLabeled("Change test bool", ref modConfigs.testBool, "Change the test bool");
-            listingStandard.End();
-
-            base.DoSettingsWindowContents(inRect);
-        }
+        listingStandard.End();
+        base.DoSettingsWindowContents(inRect);
     }
 }
