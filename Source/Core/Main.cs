@@ -31,5 +31,5 @@ public static class Main
         CultureInfo.DefaultThreadCurrentUICulture = new CultureInfo("en-US", false);
     }
 
-    private static void DisplayLoadMessage() { Logger.Message("Mod loaded correctly"); }
+    private static void DisplayLoadMessage() { Logger.Message("Mod loaded correctly!"); }
 }
