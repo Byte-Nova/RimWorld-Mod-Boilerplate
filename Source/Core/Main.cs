@@ -12,6 +12,8 @@ public static class Main
         {
             ApplyHarmonyPathches();
             PrepareCulture();
+
+            DisplayLoadMessage();
         }
     }
 
@@ -21,11 +23,13 @@ public static class Main
         harmony.PatchAll(Assembly.GetExecutingAssembly());
     }
 
-    public static void PrepareCulture()
+    private static void PrepareCulture()
     {
         CultureInfo.CurrentCulture = new CultureInfo("en-US", false);
         CultureInfo.CurrentUICulture = new CultureInfo("en-US", false);
         CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("en-US", false);
         CultureInfo.DefaultThreadCurrentUICulture = new CultureInfo("en-US", false);
     }
+
+    private static void DisplayLoadMessage() { Logger.Message("Mod loaded correctly"); }
 }
